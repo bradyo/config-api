@@ -1,0 +1,53 @@
+{
+    "description": "Application Config Properties",
+    "type": "object",
+    "properties": {
+        "aws": {
+            "type": "object",
+            "required": true,
+            "properties": {
+                "accessKeyId": {
+                    "type": "string",
+                    "required": "true"
+                },
+                "secretAccessKey": {
+                    "type": "string",
+                    "required": "true"
+                }
+            }
+        },
+        "sendQueue": {
+            "type": "object",
+            "required": true,
+            "properties": {
+                "bucket": {
+                    "type": "string",
+                    "required": "true"
+                }
+            }
+        },
+        "smtp": {
+            "type": "object",
+            "required": true,
+            "properties": {
+                "server": {
+                    "type": "string",
+                    "required": "true"
+                },
+                "username": {
+                    "type": "string",
+                    "required": "true"
+                },
+                "password": {
+                    "type": "string",
+                    "required": "true"
+                },
+                "port": {
+                    "type": "integer",
+                    "required": "true"
+                }
+            }
+        }
+    },
+    "additionalProperties": false
+}

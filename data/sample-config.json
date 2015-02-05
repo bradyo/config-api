@@ -1,0 +1,15 @@
+{
+    "aws": {
+        "accessKeyId": "super-secret-id",
+        "secretAccessKey": "super-secret-key"
+    },
+    "sendQueue": {
+        "bucket": "send-queue-bucket"
+    },
+    "smtp": {
+        "server": "smtp.gmail.com",
+        "username": "secret-username",
+        "password": "secret-password",
+        "port": 587
+    }
+}

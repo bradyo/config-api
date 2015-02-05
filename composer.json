@@ -1,0 +1,32 @@
+{
+    "minimum-stability": "dev",
+    "name": "bradyo/commando-php-api-sample",
+    "description": "Sample API application using commando-php framework",
+    "keywords": ["framework"],
+    "homepage": "https://github.com/bradyo/commando-php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brady Olsen",
+            "email": "bradyaolsen@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/bradyo/commando-php"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "aura/router": "2.2.0",
+        "justinrainbow/json-schema": "~1.3",
+        "monolog/monolog": "*",
+        "bradyo/commando-php": "dev-develop"
+    },
+    "autoload": {
+        "psr-4": {
+            "Api\\": "src/"
+        }
+    }
+}
