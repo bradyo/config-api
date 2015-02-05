@@ -1,3 +1,7 @@
+
+Endpoints
+---------
+
 /accounts
 /accounts/:id
 
@@ -17,9 +21,12 @@
 /accounts/:id/consumers
 
 
-
+Formats
+-------
 
 GET /accounts/1/profiles
+
+```
 {
     "total": 3,
     "profiles": [
@@ -38,8 +45,7 @@ GET /accounts/1/profiles
                     "href": "https://config.website.com/accounts/1/profiles/development/configs/1",
                     "createdAt": "2015-01-01T22:00:00Z",
                     "schema": {
-                        "dataUrl": "https://s3/schemas-1.json",
-                        
+                        "dataUrl": "https://s3/schemas-1.json"
                     }
                 }
             ]
@@ -73,11 +79,12 @@ GET /accounts/1/profiles
             ]
         }
     ]
-
-    
 }
+```
 
 GET /accounts/1/consumers/1
+
+```json
 {
     "id": 1,
     "createdAt": "2015-01-01T22:00:00Z",
@@ -94,8 +101,5 @@ GET /accounts/1/consumers/1
         }
     ]
 }
+```
 
-
-
-
-$configClient->
