@@ -2,10 +2,13 @@
 
 ## Endpoint URL Structure
 
+```
 /accounts
 /accounts/:id
 /accounts/current
+```
 
+```
 /accounts/:id/configs
 /accounts/:id/configs/:id
 /accounts/:id/configs/:id/schema
@@ -14,22 +17,26 @@
 /accounts/:id/configs/:id/profiles/:id/versions/:id
 /accounts/:id/configs/:id/profiles/:id/versions/:id/consumers
 /accounts/:id/configs/:id/profiles/:id/versions/latest
+```
 
+```
 /accounts/:id/consumers
 /accounts/:id/consumers/:id
 /accounts/:id/consumers/:id/data
 /accounts/:id/consumers/:id/listeners
 /accounts/:id/consumers/:id/listeners/:id/messages
+```
 
 ### Examples:
 
+```
 /accounts/1/configs/1/schema
 /accounts/1/configs/1/profiles/production/versions/1
 /accounts/1/configs/1/profiles/production/versions/2
 /accounts/1/configs/1/profiles/staging/versions/1
 /accounts/1/consumers/1/profile
 /accounts/1/consumers/1/listeners/1/messages
-
+```
 
 ## Rest Flows
 
