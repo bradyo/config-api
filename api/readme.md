@@ -193,12 +193,9 @@ curl -u TestClient:token 'http://localhost:8000/configs/1/profiles/production/ve
 
 ```bash
 curl -u TestClient:token 'http://localhost:8000/configs/1/profiles/production/data' \
-{
-    "aws": {
-        "access_key_id": "prod-super-secret-id-2",
-        "secret_access_key": "prod-super-secret-key-2"
-    }
-}
+```
+```
+304 http://localhost:8000/configs/1/profiles/production/versions/2/data
 ```
 
 ```bash
