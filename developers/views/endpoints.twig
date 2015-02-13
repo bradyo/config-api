@@ -1,0 +1,30 @@
+{% extends "layout.twig" %}
+
+{% block title %}
+    Endpoints
+{% endblock %}
+
+{% block content %}
+    <h1 class="page-header">Endpoints</h1>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Endpoint</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tr>
+            <td><a href="/account-endpoints">Account</a></td>
+            <td>Provides resources for systems, configs, and consumers belonging to an account.</td>
+        </tr>
+        <tr>
+            <td><a href="/config-endpoints">Config</a></td>
+            <td>Provides resources for managing config schemas and profiles.</td>
+        </tr>
+        <tr>
+            <td><a href="/consumer-endpoints">Consumer</a></td>
+            <td>Provides resources for managing config consumers and event post-backs.</td>
+        </tr>
+    </table>
+{% endblock %}

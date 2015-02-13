@@ -1,0 +1,42 @@
+{% extends 'partials/endpoint.twig' %}
+
+{% block method %}GET{% endblock %}
+{% block uri %}
+    /accounts
+{% endblock %}
+
+{% block description %}
+    Get a list of accounts.
+{% endblock %}
+
+{% block request_example %}
+curl -u ClientId:Secret 'https://api.config.local/accounts'
+{% endblock %}
+
+{% block response_example %}
+{
+    "total": 1,
+    "items": [
+        {
+            "url": "https://api.config.local/accounts/1",
+            "name": "Account 1",
+            "contact_email_address": "admin@domain.local"
+        }
+    ]
+}
+{% endblock %}
+
+{% block parameter_rows %}
+    <tr>
+        <td><span class="label label-default">limit</span></td>
+        <td>Max number of items to return</td>
+    </tr>
+    <tr>
+        <td><span class="label label-default">offset</span></td>
+        <td>Number of items to skip before result</td>
+    </tr>
+    <tr>
+        <td><span class="label label-default">limit</span></td>
+        <td>Max number of items to return</td>
+    </tr>
+{% endblock %}

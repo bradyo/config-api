@@ -1,0 +1,14 @@
+{% extends "layout.twig" %}
+
+{% block title %}
+    Account Endpoints
+{% endblock %}
+
+{% block content %}
+    <h1 class="page-header">Account Endpoints</h1>
+    {% include "endpoints/account/get-accounts.twig" %}
+    {% include "endpoints/account/get-account.twig" %}
+    {% include "endpoints/account/get-current-account.twig" %}
+{% endblock %}
+
+

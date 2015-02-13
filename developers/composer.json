@@ -1,0 +1,30 @@
+{
+    "minimum-stability": "dev",
+    "name": "bradyo/config-api-developers",
+    "description": "Config-API developers site",
+    "keywords": ["framework"],
+    "homepage": "https://github.com/bradyo/config-api",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brady Olsen",
+            "email": "bradyaolsen@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/bradyo/commando-php"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "twig/twig": "1.16.2",
+        "bradyo/commando-php": "dev-develop"
+    },
+    "autoload": {
+        "psr-4": {
+            "Developers\\": "src/"
+        }
+    }
+}

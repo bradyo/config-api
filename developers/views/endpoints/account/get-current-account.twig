@@ -1,0 +1,21 @@
+{% extends 'partials/endpoint.twig' %}
+
+{% block method %}GET{% endblock %}
+{% block uri %}
+    /accounts/current
+{% endblock %}
+
+{% block description %}
+    Gets the account URL for the calling client.
+{% endblock %}
+
+
+{% block request_example %}
+curl -u ClientId:Secret 'https://api.config.local/accounts/current'
+{% endblock %}
+
+{% block response_example %}
+Location: https://api.config.local/accounts/1
+{% endblock %}
+
+{% block parameters %}{% endblock %}

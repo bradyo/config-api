@@ -1,0 +1,47 @@
+{% extends "layout.twig" %}
+
+{% block title %}
+    Rate Limits
+{% endblock %}
+
+{% block content %}
+    <h1 class="page-header">Rate Limits</h1>
+
+    <p>The total number of requests a client can make is restricted over a sliding 1-hour time frame.</p>
+
+    <p>Each API response contains information about the client rate limit and remaining calls available.</p>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Header</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>RateLimit-Limit</td>
+            <td>The total number of API requests your client can make in a 1-hour window.</td>
+        </tr>
+        <tr>
+            <td>RateLimit-Remaining</td>
+            <td>The number of remaining API requests your client can make in the current 1-hour window.</td>
+        </tr>
+    </table>
+
+    <h2>Response Codes</h2>
+
+    <p>If your client exceeds these rate limit, it will receive a response with HTTP status code 429 (Too Many Requests).</p>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Header</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tr>
+            <td>Retry-After</td>
+            <td>The number of seconds your client should wait before retrying.</td>
+        </tr>
+    </table>
+{% endblock %}
