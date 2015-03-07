@@ -1,16 +1,17 @@
 <?php
 namespace Api;
 
-use Commando\Web\Response;
+use Api\Web\DataResponse;
+use Commando\Web\Request;
 use Commando\Web\ResponseDecorator;
 
-class ApplicationResponse implements Response
+class ApplicationResponse extends DataResponse
 {
     use ResponseDecorator;
 
-    public function __construct(Response $response)
+    function __construct($data, Request $request, $statusCode = 200, $headers = [])
     {
-        $this->response = $response;
+        parent::__construct($data, $request, $statusCode, $headers);
     }
 
     public function getHeaders()

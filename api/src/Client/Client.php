@@ -31,7 +31,7 @@ class Client
         return $this->account;
     }
 
-    public function matchesAccountId($otherAccountId)
+    public function canAccessAccount($otherAccountId)
     {
         return $this->getAccount()->getId() === $otherAccountId;
     }

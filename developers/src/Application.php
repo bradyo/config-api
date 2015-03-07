@@ -1,10 +1,7 @@
 <?php
 namespace Developers;
 
-use Commando\Shell\DefaultExceptionHandler;
-use Commando\Web\DefaultWebExceptionHandler;
 use Commando\Web\TextResponse;
-use Commando\Web\WebExceptionHandler;
 use Twig_Loader_Filesystem;
 use Twig_Environment;
 use Commando\Web\RequestHandler;

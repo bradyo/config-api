@@ -1,36 +1,20 @@
 <?php
 namespace Api\Account;
 
-use Api\Web\ValidationErrorResponse;
-
 class ListAccountsHandler
 {
-    private $requestValidator;
-    private $accountRepository;
+    private $accountRepo;
 
-    public function __construct(
-        AccountListRequestValidator $requestValidator,
-        AccountRepository $accountRepository
-    ) {
-        $this->requestValidator = $requestValidator;
-        $this->accountRepository = $accountRepository;
+    public function __construct(AccountRepo $accountRepo) {
+        $this->accountRepo = $accountRepo;
     }
 
-    public function handle(AccountsListRequest $request)
+    public function handle(ListAccountsRequest $request)
     {
-        $errors = $this->requestValidator->validate($request);
-        if (count($errors) > 0) {
-            return new ValidationErrorResponse('Invalid request', $errors, $request);
-        }
+        $query = $request->getQuery();
+        $accounts = $this->accountRepo->find($query);
+        $total = $this->accountRepo->count($query);
 
-        $accounts = $this->accountRepository->findAll(
-            $request->getAccountId(),
-            $request->getSearch(),
-            $request->getFilter(),
-            $request->getLimit(),
-            $request->getOffest()
-        );
-
-        return new AccountsListResponse($accounts, $request);
+        return new AccountListResponse($accounts, $total, $request);
     }
 }

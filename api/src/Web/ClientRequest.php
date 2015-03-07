@@ -7,6 +7,7 @@ use Commando\Web\Request;
 class ClientRequest extends DataRequest
 {
     private $client;
+    private $requiresAuthToken = false;
 
     public function __construct(Request $request, Client $client)
     {
@@ -21,7 +22,7 @@ class ClientRequest extends DataRequest
 
     public function matchesAccountId($otherAccountId)
     {
-        return $this->client->matchesAccountId($otherAccountId);
+        return $this->client->canAccessAccount($otherAccountId);
     }
 
     public function getApiCallsLimit()
@@ -39,9 +40,17 @@ class ClientRequest extends DataRequest
         return $this->client->isOverRateLimit();
     }
 
-    public function hasValidAuthToken()
+    public function hasInvalidAuthToken()
     {
-        return true;
-        return $this->getClient()->isValidAuthToken($this->getHeader('AuthToken'));
+        if ($this->requiresAuthToken) {
+            return $this->getClient()->isValidAuthToken($this->getHeader('AuthToken'));
+        } else {
+            return false;
+        }
+    }
+
+    public function getUrlBase()
+    {
+        return $this->getScheme() . $this->getServerName();
     }
 }

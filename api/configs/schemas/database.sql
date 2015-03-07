@@ -1,7 +1,10 @@
 CREATE TABLE accounts(
   id INTEGER PRIMARY KEY,
-  name TEXT
+  hash TEXT,
+  name TEXT,
+  contact_email_address TEXT
 );
+CREATE INDEX index_accounts_hash ON accounts(hash);
 
 CREATE TABLE systems(
   id INTEGER PRIMARY KEY,

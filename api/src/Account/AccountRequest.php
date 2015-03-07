@@ -5,16 +5,25 @@ use Api\Web\ClientRequest;
 
 class AccountRequest extends ClientRequest
 {
-    private $accountId;
+    private $accountHash;
 
-    public function __construct(ClientRequest $request, $accountId)
+    /**
+     * @param ClientRequest $request
+     * @param string $accountHash
+     */
+    public function __construct(ClientRequest $request, $accountHash)
     {
         parent::__construct($request, $request->getClient());
-        $this->accountId = $accountId;
+        $this->accountHash = $accountHash;
     }
 
-    public function getAccountId()
+    public function getAccountHash()
     {
-        return $this->accountId;
+        return $this->accountHash;
+    }
+
+    public function getUri()
+    {
+        return substr(parent::getUri(), strlen('/accounts/' . $this->accountHash));
     }
 }

@@ -1,7 +1,9 @@
 <?php
 namespace Api\Web;
 
-class ClientResponse extends DataResponse
+use Api\ApplicationResponse;
+
+class ClientResponse extends ApplicationResponse
 {
     private $request;
 

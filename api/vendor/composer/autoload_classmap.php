@@ -8,7 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'Api\\Account\\Account' => $baseDir . '/src/Account/Account.php',
     'Api\\Account\\AccountGetHandler' => $baseDir . '/src/Account/AccountGetHandler.php',
-    'Api\\Account\\AccountRepository' => $baseDir . '/src/Account/AccountRepository.php',
+    'Api\\Account\\AccountRepo' => $baseDir . '/src/Account/AccountRepo.php',
     'Api\\Account\\AccountRequest' => $baseDir . '/src/Account/AccountRequest.php',
     'Api\\Account\\AccountsHandler' => $baseDir . '/src/Account/AccountsHandler.php',
     'Api\\Account\\ListAccountsHandler' => $baseDir . '/src/Account/ListAccountsHandler.php',

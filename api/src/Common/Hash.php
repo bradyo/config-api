@@ -1,13 +1,14 @@
 <?php
 namespace Api\Common;
 
-class Id
+class Hash
 {
     private $value;
 
     public function __construct()
     {
-        $this->value = substr(md5(uniqid('uuid', true)), 0, 10);
+        $s = base_convert(openssl_random_pseudo_bytes(512), 16, 36);
+        $this->value = strtoupper(substr($s, 0, 10));
     }
 
     public function __toString()

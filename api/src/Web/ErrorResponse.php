@@ -1,9 +1,10 @@
 <?php
 namespace Api\Web;
 
+use Api\ApplicationResponse;
 use Commando\Web\Request;
 
-class ErrorResponse extends DataResponse
+class ErrorResponse extends ApplicationResponse
 {
     /**
      * @param string $message
