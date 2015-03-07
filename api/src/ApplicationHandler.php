@@ -7,6 +7,7 @@ use Api\Web\NotAllowedResponse;
 use Api\Web\NotAuthenticatedResponse;
 use Api\Security\Guard;
 use Api\Web\RateLimitedResponse;
+use Commando\Web\Method;
 use Commando\Web\Request;
 use Commando\Web\RequestHandler;
 use Pimple\Container;
@@ -24,6 +25,10 @@ class ApplicationHandler implements RequestHandler
 
     public function handle(Request $request)
     {
+        if ($request->getRequestMethod() === Method::GET && $request->getUri() === '/') {
+            return $this->subHandlers['get-home']->handle($request);
+        }
+
         $client = $this->guard->authenticate($request);
         if ($client === null) {
             return new NotAuthenticatedResponse("Must authenticate with HTTP Basic Auth", $request);

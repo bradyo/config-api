@@ -1,3 +1,2 @@
-/vendor/
-/composer.phar
-/configs/config.php
+vendor/
+configs/config.php
